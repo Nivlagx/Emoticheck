@@ -43,3 +43,12 @@ input#my-file-selector {
     display: none;
     font-size: 30px;
 }
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 26px;
+    line-height: normal;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    }
