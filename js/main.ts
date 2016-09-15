@@ -123,5 +123,6 @@ function getTotalMood(scores : any) : Mood {
     document.getElementById("neutral").innerHTML = "Neutral Level: " + ( (scores.neutral / +totalMood) * 100 ).toFixed(2) + "%";
     document.getElementById("sadness").innerHTML = "Sadness Level: " + ( (scores.sadness / +totalMood) * 100 ).toFixed(2) + "%";
     document.getElementById("surprise").innerHTML = "Surprise Level: " + ( (scores.surprise / +totalMood) * 100 ).toFixed(2) + "%";
+    $(".Spanel").show();
     return totalMood;
 }

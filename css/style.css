@@ -7,18 +7,11 @@ html {
 }
 
 body {
-    color: white;
     background-color: transparent;
 }
 
 h1#app-name {
     font-size:84px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-h2 {
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
 }
 
 button#refreshbtn {
@@ -50,4 +43,10 @@ body #page-container {
 
 input#my-file-selector {
     display:none;
+}
+
+.Spanel {
+    width: 500px;
+    margin: auto;
+    display: none;
 }
