@@ -10,10 +10,6 @@ h1#app-name {
     font-size:84px;
 }
 
-button#refreshbtn {
-    display:none;
-}
-
 img#selected-img{
     width:150px;
     height:150px;
