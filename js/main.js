@@ -7,7 +7,7 @@ var imgSelector = $("#my-file-selector")[0];
 var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 // Register button listeners
 imgSelector.addEventListener("change", function () {
-    pageheader.innerHTML = "Just a sec while we analyse your mood...";
+    pageheader.innerHTML = "Just a sec while we analyse your emotions...";
     processImage(function (file) {
         // Get emotions based on image
         sendEmotionRequest(file, function (emotionScores) {
@@ -40,7 +40,7 @@ function processImage(callback) {
 }
 function changeUI() {
     //Show detected mood
-    pageheader.innerHTML = "Your mood is: " + currentMood.name; //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
+    pageheader.innerHTML = "Your emotion level is: " + currentMood.name; //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
     //Remove offset at the top
     pagecontainer.style.marginTop = "20px";
 }
@@ -82,10 +82,10 @@ var Mood = (function () {
     }
     return Mood;
 }());
-var happy = new Mood("happy");
-var sad = new Mood("sad");
-var angry = new Mood("angry");
-var neutral = new Mood("neutral");
+var happy = new Mood("mostly happy");
+var sad = new Mood("mostly sad");
+var angry = new Mood("mostly angry");
+var neutral = new Mood("mostly neutral");
 // any type as the scores values is from the project oxford api request (so we dont know the type)
 function getCurrMood(scores) {
     // In a practical sense, you would find the max emotion out of all the emotions provided. However we'll do the below just for simplicity's sake :P

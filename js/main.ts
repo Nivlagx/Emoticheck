@@ -10,7 +10,7 @@ var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this j
 
 // Register button listeners
 imgSelector.addEventListener("change", function () { // file has been picked
-    pageheader.innerHTML = "Just a sec while we analyse your mood...";
+    pageheader.innerHTML = "Just a sec while we analyse your emotions...";
     processImage(function (file) { //this checks the extension and file
         // Get emotions based on image
         sendEmotionRequest(file, function (emotionScores) { //here we send the API request and get the response
@@ -43,7 +43,7 @@ function processImage(callback) : void {
 
 function changeUI() : void {
     //Show detected mood
-    pageheader.innerHTML = "Your mood is: " + currentMood.name;  //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
+    pageheader.innerHTML = "Your emotion level is: " + currentMood.name;  //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
 
     //Remove offset at the top
     pagecontainer.style.marginTop = "20px";
@@ -89,10 +89,10 @@ class Mood {
 }
 
 
-var happy : Mood = new Mood("happy");
-var sad : Mood  = new Mood("sad");
-var angry : Mood = new Mood("angry");
-var neutral : Mood  = new Mood("neutral");
+var happy : Mood = new Mood("mostly happy");
+var sad : Mood  = new Mood("mostly sad");
+var angry : Mood = new Mood("mostly angry");
+var neutral : Mood  = new Mood("mostly neutral");
 
 
 // any type as the scores values is from the project oxford api request (so we dont know the type)
