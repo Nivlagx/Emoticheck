@@ -105,16 +105,63 @@ function getCurrMood(scores) {
 }
 //Mood Percent
 var totalMood;
+var list1 = {};
 function getTotalMood(scores) {
-    totalMood = scores.anger + scores.contempt + scores.disgust + scores.fear + scores.happiness + scores.neutral + scores.sadness + scores.surprise;
+    totalMood = scores.anger + scores.happiness + scores.neutral + scores.sadness;
     document.getElementById("anger").innerHTML = "Anger Level: " + ((scores.anger / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("contempt").innerHTML = "Contempt Level: " + ((scores.contempt / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("disgust").innerHTML = "Disgust Level: " + ((scores.disgust / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("fear").innerHTML = "Fear Level: " + ((scores.fear / +totalMood) * 100).toFixed(2) + "%";
+    var angerValue = ((scores.anger / +totalMood) * 100);
+    list1['Anger'] = angerValue;
+
     document.getElementById("happiness").innerHTML = "Happiness Level: " + ((scores.happiness / +totalMood) * 100).toFixed(2) + "%";
+    var happinessValue = ((scores.happiness / +totalMood) * 100);
+    list1['Happy'] = happinessValue;
+
     document.getElementById("neutral").innerHTML = "Neutral Level: " + ((scores.neutral / +totalMood) * 100).toFixed(2) + "%";
+    var neutralValue = ((scores.neutral / +totalMood) * 100);
+    list1['Neutral'] = neutralValue;
+
     document.getElementById("sadness").innerHTML = "Sadness Level: " + ((scores.sadness / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("surprise").innerHTML = "Surprise Level: " + ((scores.surprise / +totalMood) * 100).toFixed(2) + "%";
+    var sadnessValue = ((scores.sadness / +totalMood) * 100);
+    list1['Sad'] = sadnessValue;
+
     $(".Spanel").show();
-    return totalMood;
+    console.log("t1", list1);
+    return list1;
 }
+
+console.log("t6",sadnessValue);
+console.log("t2[]",list1['Anger']);
+var angerValue = Object["Anger"];
+var happinessValue;
+var neutralValue;
+var sadnessValue;
+console.log("t2",list1['Anger']);
+console.log("t3",sadnessValue);
+
+var data = [
+        {
+            value: angerValue,
+            color: "red",
+            highlight: "red",
+            label: "Corn Flower Blue"
+        },
+        {
+            value: happinessValue,
+            color: "lightgreen",
+            highlight: "yellowgreen",
+            label: "Lightgreen"
+        },
+        {
+            value: neutralValue,
+            color: "orange",
+            highlight: "darkorange",
+            label: "Orange"
+        },
+        {
+            value: sadnessValue,
+            color: "cornflowerblue",
+            highlight: "lightskyblue",
+            label: "Corn Flower Blue"
+        }
+    ];
+
