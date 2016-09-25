@@ -115,6 +115,7 @@ var totalMood;
 
 function getTotalMood(scores) {
     totalMood = scores.anger + scores.happiness + scores.neutral + scores.sadness;
+    
     document.getElementById("anger").innerHTML = "Anger Level: " + ((scores.anger / +totalMood) * 100).toFixed(2) + "%";
     angerValue = ((scores.anger / +totalMood) * 100);
 

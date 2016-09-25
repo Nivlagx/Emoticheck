@@ -52,3 +52,18 @@ input#my-file-selector {
        -moz-border-radius: 10px;
             border-radius: 10px;
     }
+
+#mycanvas {
+        padding: 20px;
+    }
+
+@media screen and (max-width: 500px) {
+    .btn-xlarge {
+        padding: 50px 60px;
+        font-size: 40px;
+        line-height: normal;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+                border-radius: 10px;
+        }
+}
