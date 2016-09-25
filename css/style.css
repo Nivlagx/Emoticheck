@@ -57,7 +57,7 @@ input#my-file-selector {
         padding: 20px;
     }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .btn-xlarge {
         padding: 50px 60px;
         font-size: 40px;
