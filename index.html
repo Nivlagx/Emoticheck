@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Emoticheck</title>
+        <!--JQuery-->
+        <script src="jquery-2.1.4.min.js"></script>
         <!--Boostrap's CSS-->
         <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
         <!--Custom CSS-->
@@ -34,6 +36,9 @@
                     Upload a picture of you
                 </label>
             </div>
+
+            <canvas id="mycanvas" width="256" height="256">
+
             <div class="Spanel panel panel-default">
                     <div class="panel-body">
                         <p id="anger"></p>
@@ -51,7 +56,9 @@
         <!--jQuery Script-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <!--Bootstrap Script-->
+        
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="Chart.js"></script>
         <!--Custom Script-->
         <script src="./js/main.js"></script>
     </body>

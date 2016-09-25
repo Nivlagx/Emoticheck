@@ -103,18 +103,57 @@ function getCurrMood(scores) {
     }
     return currentMood;
 }
+
 //Mood Percent
+function makeChart(){
+				var ctx = $("#mycanvas").get(0).getContext("2d");
+				var piechart = new Chart(ctx).Pie(data);
+                };
+
+var data = {};
 var totalMood;
+
 function getTotalMood(scores) {
-    totalMood = scores.anger + scores.contempt + scores.disgust + scores.fear + scores.happiness + scores.neutral + scores.sadness + scores.surprise;
+    totalMood = scores.anger + scores.happiness + scores.neutral + scores.sadness;
     document.getElementById("anger").innerHTML = "Anger Level: " + ((scores.anger / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("contempt").innerHTML = "Contempt Level: " + ((scores.contempt / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("disgust").innerHTML = "Disgust Level: " + ((scores.disgust / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("fear").innerHTML = "Fear Level: " + ((scores.fear / +totalMood) * 100).toFixed(2) + "%";
+    angerValue = ((scores.anger / +totalMood) * 100);
+
     document.getElementById("happiness").innerHTML = "Happiness Level: " + ((scores.happiness / +totalMood) * 100).toFixed(2) + "%";
+    happinessValue = ((scores.happiness / +totalMood) * 100);
+
     document.getElementById("neutral").innerHTML = "Neutral Level: " + ((scores.neutral / +totalMood) * 100).toFixed(2) + "%";
+    neutralValue = ((scores.neutral / +totalMood) * 100);
+
     document.getElementById("sadness").innerHTML = "Sadness Level: " + ((scores.sadness / +totalMood) * 100).toFixed(2) + "%";
-    document.getElementById("surprise").innerHTML = "Surprise Level: " + ((scores.surprise / +totalMood) * 100).toFixed(2) + "%";
+    sadnessValue = ((scores.sadness / +totalMood) * 100);
+    
+    data = [
+        {
+            value: angerValue,
+            color: "red",
+            highlight: "red",
+            label: "Angry"
+        },
+        {
+            value: happinessValue,
+            color: "lightgreen",
+            highlight: "yellowgreen",
+            label: "Happy"
+        },
+        {
+            value: neutralValue,
+            color: "orange",
+            highlight: "darkorange",
+            label: "Neutral"
+        },
+        {
+            value: sadnessValue,
+            color: "cornflowerblue",
+            highlight: "lightskyblue",
+            label: "Sad"
+        }
+    ];
     $(".Spanel").show();
+    makeChart()
     return totalMood;
 }
